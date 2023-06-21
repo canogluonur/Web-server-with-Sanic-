@@ -24,9 +24,14 @@ services:
       DB_USER: wikijs
       DB_PASS: wikijsrocks
       DB_NAME: wiki
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+          cpus: "1"
     restart: unless-stopped
     ports:
-      - "80:3000"
+      - "3000:3000"
 
 volumes:
   db-data:
